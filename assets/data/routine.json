@@ -1,9 +1,158 @@
 {
   "meta": {
     "goals": "fuerza e hipertrofia",
-    "frequency": "6 días/semana — Push/Pull/Legs ×2"
+    "frequency": "6 días/semana — Push/Pull/Legs ×2 (día A = fuerza, día B = volumen)"
   },
   "days": [
+    {
+      "id": "push-a",
+      "name": "Push A",
+      "group": "push",
+      "focus": "fuerza",
+      "blocks": [
+        {
+          "name": "Potencia: Flexiones con palmada (opcional)",
+          "type": "potencia",
+          "restBetweenSets": "2 min",
+          "note": "Máxima explosión, calidad no cantidad. Frescas, al inicio. Si andas corto de tiempo, este es el primer bloque que se corta.",
+          "exercises": [
+            {
+              "name": "Flexiones con palmada",
+              "sets": "4",
+              "reps": "5 explosivas"
+            }
+          ]
+        },
+        {
+          "name": "Fuerza horizontal: Pseudo-planche push-ups",
+          "type": "fuerza",
+          "restBetweenSets": "2-2.5 min",
+          "note": "Manos a la altura de la cintura, cuerpo inclinado hacia adelante. Cuerpo recto y tenso.",
+          "progression": "Inclinarte más adelante (manos más abajo) conforme mejoras.",
+          "exercises": [
+            {
+              "name": "Pseudo-planche push-ups",
+              "sets": "4-5",
+              "reps": "5-8",
+              "intensity": "RIR 1-2"
+            }
+          ]
+        },
+        {
+          "name": "Fuerza/hipertrofia vertical: Dips",
+          "type": "fuerza",
+          "restBetweenSets": "2 min",
+          "note": "Rango completo: hombro por debajo del codo, sube a bloqueo. Los dips son la mitad de tu muscle-up.",
+          "progression": "Tempo lento (bajada 3s) → pausa 1s abajo → dips en anillas.",
+          "exercises": [
+            {
+              "name": "Dips",
+              "sets": "4",
+              "reps": "6-8",
+              "intensity": "RIR 1-2"
+            }
+          ]
+        },
+        {
+          "name": "Empuje vertical / hombros: Pike push-ups",
+          "type": "fuerza",
+          "restBetweenSets": "90-120s",
+          "note": "Pies en la silla, cadera bien alta, cuerpo casi vertical. Empujas como press de hombros.",
+          "progression": "Silla más alta → HSPU contra pared → HSPU libre.",
+          "exercises": [
+            {
+              "name": "Pike push-ups (pies elevados)",
+              "sets": "3-4",
+              "reps": "6-10"
+            }
+          ]
+        },
+        {
+          "name": "Hipertrofia pecho: Flexiones declinadas",
+          "type": "hipertrofia",
+          "restBetweenSets": "90s",
+          "note": "Pies elevados en silla (pecho superior).",
+          "progression": "Subir reps → archer push-ups.",
+          "exercises": [
+            {
+              "name": "Flexiones declinadas",
+              "sets": "3",
+              "reps": "8-15",
+              "intensity": "tempo 2-1-2, RIR 1"
+            }
+          ]
+        },
+        {
+          "name": "Tríceps + core",
+          "type": "core",
+          "restBetweenSets": "90s / 60s",
+          "exercises": [
+            { "name": "Flexiones diamante", "sets": "2-3", "reps": "8-12" },
+            {
+              "name": "Hollow body hold",
+              "sets": "3",
+              "reps": "20-30s",
+              "note": "Descanso 60s entre series."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "push-b",
+      "name": "Push B",
+      "group": "push",
+      "focus": "volumen",
+      "blocks": [
+        {
+          "name": "Pseudo-planche push-ups",
+          "type": "hipertrofia",
+          "restBetweenSets": "2 min",
+          "exercises": [
+            {
+              "name": "Pseudo-planche push-ups",
+              "sets": "3",
+              "reps": "6",
+              "intensity": "RIR 2-3 (suave)"
+            }
+          ]
+        },
+        {
+          "name": "Dips",
+          "type": "hipertrofia",
+          "restBetweenSets": "90-120s",
+          "exercises": [{ "name": "Dips", "sets": "5", "reps": "6-8" }]
+        },
+        {
+          "name": "Pike push-ups",
+          "type": "hipertrofia",
+          "restBetweenSets": "90s",
+          "exercises": [
+            {
+              "name": "Pike push-ups (pies elevados)",
+              "sets": "4",
+              "reps": "8-12"
+            }
+          ]
+        },
+        {
+          "name": "Flexiones declinadas",
+          "type": "hipertrofia",
+          "restBetweenSets": "90s",
+          "exercises": [
+            { "name": "Flexiones declinadas", "sets": "3", "reps": "12-15" }
+          ]
+        },
+        {
+          "name": "Core",
+          "type": "core",
+          "restBetweenSets": "60s",
+          "exercises": [
+            { "name": "Hollow body hold", "sets": "3", "reps": "20-30s" }
+          ]
+        }
+      ]
+    },
     {
       "id": "pull-a",
       "name": "Pull A",
@@ -14,7 +163,7 @@
           "name": "Fuerza vertical: Dominadas pronas",
           "type": "fuerza",
           "restBetweenSets": "2-2.5 min",
-          "note": "Rango completo, sin balanceo, bajada controlada (~2s).",
+          "note": "Rango completo, sin balanceo, bajada controlada (~2s). Base actual: 3 dominadas pronas máx.",
           "progression": "5×3 limpias a RIR 1 → retest → 4×4…",
           "exercises": [
             {
@@ -27,7 +176,7 @@
               "name": "Negativas lentas",
               "sets": "3",
               "reps": "1",
-              "note": "Subes con impulso, bajas en 4-5s controlando"
+              "note": "Subes con impulso, bajas en 4-5s controlando. Descanso ~90s."
             }
           ]
         },
@@ -35,6 +184,7 @@
           "name": "Hipertrofia vertical: Chin-ups",
           "type": "hipertrofia",
           "restBetweenSets": "90-120s",
+          "note": "Reps las que salgan dejando 1 en el tanque (probablemente 3-4, y está perfecto).",
           "progression": "Hasta 3×6 limpias, luego progresamos.",
           "exercises": [
             {
@@ -49,7 +199,8 @@
           "name": "Hipertrofia horizontal: Australianas en anillas",
           "type": "hipertrofia",
           "restBetweenSets": "90s",
-          "progression": "Subir reps → pies adelante → pies elevados en silla.",
+          "note": "Regula la dificultad caminando los pies: empieza donde te queden 1-2 reps en reserva.",
+          "progression": "Subir reps → caminar pies adelante → pies elevados en silla.",
           "exercises": [
             {
               "name": "Australianas en anillas",
@@ -60,9 +211,10 @@
           ]
         },
         {
-          "name": "Deltoides posterior: Face-pull en anillas",
+          "name": "Deltoides posterior / trapecio: Face-pull en anillas",
           "type": "accesorios",
           "restBetweenSets": "60-90s",
+          "note": "Codos altos y abiertos, jalas hacia la cara/clavícula.",
           "exercises": [
             { "name": "Face-pull en anillas", "sets": "2-3", "reps": "12-15" }
           ]
@@ -81,27 +233,227 @@
               "name": "Hanging knee raises",
               "sets": "3",
               "reps": "8-12",
-              "note": "Sin balanceo. Semilla del L-sit."
+              "note": "Colgado, rodillas al pecho sin balanceo. Semilla del L-sit."
             },
             { "name": "Dead hang al máximo", "sets": "2", "reps": "máx" }
           ]
         }
       ]
     },
-    { "id": "push-b", "name": "Push B", "group": "push", "focus": "volumen" },
-    { "id": "pull-a", "name": "Pull A", "group": "pull", "focus": "fuerza" },
-    { "id": "pull-b", "name": "Pull B", "group": "pull", "focus": "volumen" },
+    {
+      "id": "pull-b",
+      "name": "Pull B",
+      "group": "pull",
+      "focus": "volumen",
+      "blocks": [
+        {
+          "name": "Dominadas pronas (submáximo)",
+          "type": "fuerza",
+          "restBetweenSets": "90s-2 min",
+          "exercises": [
+            {
+              "name": "Dominadas pronas",
+              "sets": "6",
+              "reps": "1-2",
+              "intensity": "RIR 2"
+            },
+            { "name": "Negativas lentas", "sets": "3", "reps": "1" }
+          ]
+        },
+        {
+          "name": "Chin-ups",
+          "type": "hipertrofia",
+          "restBetweenSets": "90s",
+          "exercises": [
+            {
+              "name": "Chin-ups (supinas)",
+              "sets": "2",
+              "reps": "suaves",
+              "note": "O saltar este ejercicio."
+            }
+          ]
+        },
+        {
+          "name": "Australianas en anillas (volumen)",
+          "type": "hipertrofia",
+          "restBetweenSets": "90s",
+          "exercises": [
+            {
+              "name": "Australianas en anillas",
+              "sets": "5",
+              "reps": "8-12",
+              "note": "Variando ángulos y agarres (prona, neutra, supina)."
+            }
+          ]
+        },
+        {
+          "name": "Face-pull en anillas",
+          "type": "accesorios",
+          "restBetweenSets": "60-90s",
+          "exercises": [
+            { "name": "Face-pull en anillas", "sets": "2-3", "reps": "12-15" }
+          ]
+        },
+        {
+          "name": "Core",
+          "type": "core",
+          "restBetweenSets": "60-90s",
+          "exercises": [
+            { "name": "Hanging knee raises", "sets": "3", "reps": "8-12" }
+          ]
+        }
+      ]
+    },
     {
       "id": "legs-a",
       "name": "Legs A",
       "group": "legs",
-      "focus": "cuádriceps / fuerza"
+      "focus": "cuádriceps / fuerza",
+      "blocks": [
+        {
+          "name": "Potencia: Sentadillas con salto (opcional)",
+          "type": "potencia",
+          "restBetweenSets": "2 min",
+          "note": "Máxima altura y velocidad, aterrizaje suave. Frescas, al inicio. Primer bloque que se corta si falta tiempo.",
+          "exercises": [
+            {
+              "name": "Sentadillas con salto",
+              "sets": "4",
+              "reps": "5 explosivas"
+            }
+          ]
+        },
+        {
+          "name": "Fuerza cuádriceps: Pistol asistida con anillas",
+          "type": "fuerza",
+          "restBetweenSets": "2-2.5 min",
+          "note": "Usa las anillas para la ayuda justa. Rodilla apuntando al pie, profundidad completa.",
+          "progression": "Usar cada vez menos ayuda de las anillas → pistol libre.",
+          "exercises": [
+            {
+              "name": "Pistol asistida",
+              "sets": "4",
+              "reps": "5-8 (por pierna)",
+              "intensity": "RIR 1-2"
+            }
+          ]
+        },
+        {
+          "name": "Hipertrofia cuádriceps/glúteo: Búlgaras",
+          "type": "hipertrofia",
+          "restBetweenSets": "90-120s",
+          "note": "Pie trasero en silla, torso ligeramente inclinado, baja profundo.",
+          "progression": "Subir reps → tempo/pausa más larga → pie delantero elevado.",
+          "exercises": [
+            {
+              "name": "Búlgaras",
+              "sets": "3-4",
+              "reps": "8-12 (por pierna)",
+              "intensity": "tempo 2-1-2 (pausa 1s abajo)"
+            }
+          ]
+        },
+        {
+          "name": "Cadena posterior (los DOS, sí o sí)",
+          "type": "hipertrofia",
+          "restBetweenSets": "90-120s / 90s",
+          "note": "El hip thrust es extensión de cadera (glúteo); el RDL es bisagra de cadera (isquios). Uno no reemplaza al otro.",
+          "exercises": [
+            {
+              "name": "Hip thrust a una pierna",
+              "sets": "3",
+              "reps": "8-12 (por pierna)",
+              "intensity": "pausa 1s arriba",
+              "note": "Omóplatos en el borde de la silla, empuja con talones, no hiperextiendas la lumbar. Base actual: 3×8 técnica limpia."
+            },
+            {
+              "name": "RDL a una pierna",
+              "sets": "3",
+              "reps": "8-12 (por pierna)",
+              "intensity": "tempo controlado",
+              "note": "Bisagra de cadera: glúteo atrás, espalda recta. Siente el estiramiento del isquio."
+            }
+          ]
+        },
+        {
+          "name": "Pantorrillas",
+          "type": "accesorios",
+          "restBetweenSets": "60s",
+          "note": "Rango completo: estiramiento total abajo, pausa 1s arriba.",
+          "exercises": [
+            {
+              "name": "Pantorrillas a una pierna",
+              "sets": "3",
+              "reps": "12-20 (por pierna)"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "legs-b",
       "name": "Legs B",
       "group": "legs",
-      "focus": "cadena posterior / volumen"
+      "focus": "cadena posterior / volumen",
+      "blocks": [
+        {
+          "name": "Pistol asistida con anillas",
+          "type": "fuerza",
+          "restBetweenSets": "2 min",
+          "exercises": [
+            {
+              "name": "Pistol asistida",
+              "sets": "3",
+              "reps": "5 (por pierna)",
+              "intensity": "RIR 2-3 (suave)"
+            }
+          ]
+        },
+        {
+          "name": "Búlgaras",
+          "type": "hipertrofia",
+          "restBetweenSets": "90-120s",
+          "exercises": [
+            { "name": "Búlgaras", "sets": "4-5", "reps": "8-12 (por pierna)" }
+          ]
+        },
+        {
+          "name": "Hip thrust a una pierna",
+          "type": "hipertrofia",
+          "restBetweenSets": "90-120s",
+          "exercises": [
+            {
+              "name": "Hip thrust a una pierna",
+              "sets": "4",
+              "reps": "8-12 (por pierna)"
+            }
+          ]
+        },
+        {
+          "name": "RDL a una pierna",
+          "type": "hipertrofia",
+          "restBetweenSets": "90s",
+          "exercises": [
+            {
+              "name": "RDL a una pierna",
+              "sets": "4",
+              "reps": "10 (por pierna)"
+            }
+          ]
+        },
+        {
+          "name": "Pantorrillas",
+          "type": "accesorios",
+          "restBetweenSets": "60s",
+          "exercises": [
+            {
+              "name": "Pantorrillas a una pierna",
+              "sets": "3",
+              "reps": "12-20"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
