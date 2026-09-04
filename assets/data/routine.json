@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "goals": "fuerza e hipertrofia",
+    "frequency": "6 días/semana — Push/Pull/Legs ×2"
+  },
+  "days": [
+    { "id": "push-a", "name": "Push A", "group": "push", "focus": "fuerza" },
+    { "id": "push-b", "name": "Push B", "group": "push", "focus": "volumen" },
+    { "id": "pull-a", "name": "Pull A", "group": "pull", "focus": "fuerza" },
+    { "id": "pull-b", "name": "Pull B", "group": "pull", "focus": "volumen" },
+    {
+      "id": "legs-a",
+      "name": "Legs A",
+      "group": "legs",
+      "focus": "cuádriceps / fuerza"
+    },
+    {
+      "id": "legs-b",
+      "name": "Legs B",
+      "group": "legs",
+      "focus": "cadena posterior / volumen"
+    }
+  ]
+}

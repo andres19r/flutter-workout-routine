@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Mi rutina')),
       body: FutureBuilder<String>(
-        future: rootBundle.loadString('assets/data/rutina.json'),
+        future: rootBundle.loadString('assets/data/routine.json'),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
@@ -35,20 +35,21 @@ class HomeScreen extends StatelessWidget {
           }
 
           final data = jsonDecode(snapshot.data!) as Map<String, dynamic>;
-          final dias = data['dias'] as List<dynamic>;
+          final meta = data['meta'] as Map<String, dynamic>;
+          final days = data['days'] as List<dynamic>;
 
           return Column(
             children: [
-              Text(data['meta']['objetivos']),
+              Text(meta['goals']),
               Expanded(
                 child: ListView.builder(
-                  itemCount: dias.length,
+                  itemCount: days.length,
                   itemBuilder: (context, index) {
-                    final dia = dias[index] as Map<String, dynamic>;
+                    final dia = days[index] as Map<String, dynamic>;
                     return ListTile(
-                      title: Text(dia['nombre']),
-                      subtitle: Text(dia['enfasis']),
-                      trailing: Text(dia['grupo']),
+                      title: Text(dia['name']),
+                      subtitle: Text(dia['focus']),
+                      trailing: Text(dia['group']),
                     );
                   },
                 ),
