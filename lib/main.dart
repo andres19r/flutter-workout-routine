@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart';
+import 'package:mi_rutina/models/routine.dart';
 
 void main() => runApp(const MyApp());
 
@@ -20,12 +21,18 @@ class MyApp extends StatelessWidget {
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  Future<Routine> _loadRoutine() async {
+    final raw = await rootBundle.loadString('assets/data/routine.json');
+    final json = jsonDecode(raw) as Map<String, dynamic>;
+    return Routine.fromJson(json);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Mi rutina')),
-      body: FutureBuilder<String>(
-        future: rootBundle.loadString('assets/data/routine.json'),
+      body: FutureBuilder<Routine>(
+        future: _loadRoutine(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
@@ -34,22 +41,20 @@ class HomeScreen extends StatelessWidget {
             return Center(child: Text('Error: ${snapshot.error}'));
           }
 
-          final data = jsonDecode(snapshot.data!) as Map<String, dynamic>;
-          final meta = data['meta'] as Map<String, dynamic>;
-          final days = data['days'] as List<dynamic>;
+          final routine = snapshot.data!;
 
           return Column(
             children: [
-              Text(meta['goals']),
+              Text(routine.meta.goals),
               Expanded(
                 child: ListView.builder(
-                  itemCount: days.length,
+                  itemCount: routine.days.length,
                   itemBuilder: (context, index) {
-                    final dia = days[index] as Map<String, dynamic>;
+                    final day = routine.days[index];
                     return ListTile(
-                      title: Text(dia['name']),
-                      subtitle: Text(dia['focus']),
-                      trailing: Text(dia['group']),
+                      title: Text(day.name),
+                      subtitle: Text(day.focus),
+                      trailing: Text(day.group),
                     );
                   },
                 ),
