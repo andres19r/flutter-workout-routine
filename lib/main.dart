@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart';
-import 'package:mi_rutina/models/routine.dart';
+import 'package:mi_rutina/day_screen.dart';
+
+import 'models/routine.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Mi Rutina',
       theme: ThemeData(colorSchemeSeed: Colors.indigo, useMaterial3: true),
       home: HomeScreen(),
@@ -55,6 +58,12 @@ class HomeScreen extends StatelessWidget {
                       title: Text(day.name),
                       subtitle: Text(day.focus),
                       trailing: Text(day.group),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) => DayScreen(day: day)),
+                        ),
+                      ),
                     );
                   },
                 ),
