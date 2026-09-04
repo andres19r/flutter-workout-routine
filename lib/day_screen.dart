@@ -10,19 +10,36 @@ class DayScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(day.name)),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Grupo: ${day.group}',
-              style: Theme.of(context).textTheme.titleLarge,
+      body: day.blocks.isEmpty
+          ? const Center(child: Text('Sin detalle todavía'))
+          : ListView(
+              padding: const EdgeInsets.all(16),
+              children: [
+                for (final block in day.blocks)
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            block.name,
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                          Text('Descanso: ${block.restBetweenSets}'),
+                          const SizedBox(height: 8),
+                          for (final ex in block.exercises) ...[
+                            Text('• ${ex.name} - ${ex.sets} x ${ex.reps}'),
+                            if (ex.intensity != null)
+                              Text('~ Intensidad: ${ex.intensity}'),
+                            if (ex.note != null) Text('~ ${ex.note!}'),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ),
+              ],
             ),
-            Text('Énfasis: ${day.focus}'),
-          ],
-        ),
-      ),
     );
   }
 }

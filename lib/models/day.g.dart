@@ -11,6 +11,11 @@ _Day _$DayFromJson(Map<String, dynamic> json) => _Day(
   name: json['name'] as String,
   group: json['group'] as String,
   focus: json['focus'] as String,
+  blocks:
+      (json['blocks'] as List<dynamic>?)
+          ?.map((e) => Block.fromJson(e as Map<String, dynamic>))
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$DayToJson(_Day instance) => <String, dynamic>{
@@ -18,4 +23,5 @@ Map<String, dynamic> _$DayToJson(_Day instance) => <String, dynamic>{
   'name': instance.name,
   'group': instance.group,
   'focus': instance.focus,
+  'blocks': instance.blocks,
 };

@@ -4,7 +4,90 @@
     "frequency": "6 días/semana — Push/Pull/Legs ×2"
   },
   "days": [
-    { "id": "push-a", "name": "Push A", "group": "push", "focus": "fuerza" },
+    {
+      "id": "pull-a",
+      "name": "Pull A",
+      "group": "pull",
+      "focus": "fuerza",
+      "blocks": [
+        {
+          "name": "Fuerza vertical: Dominadas pronas",
+          "type": "fuerza",
+          "restBetweenSets": "2-2.5 min",
+          "note": "Rango completo, sin balanceo, bajada controlada (~2s).",
+          "progression": "5×3 limpias a RIR 1 → retest → 4×4…",
+          "exercises": [
+            {
+              "name": "Dominadas pronas",
+              "sets": "5",
+              "reps": "2",
+              "intensity": "RIR 1"
+            },
+            {
+              "name": "Negativas lentas",
+              "sets": "3",
+              "reps": "1",
+              "note": "Subes con impulso, bajas en 4-5s controlando"
+            }
+          ]
+        },
+        {
+          "name": "Hipertrofia vertical: Chin-ups",
+          "type": "hipertrofia",
+          "restBetweenSets": "90-120s",
+          "progression": "Hasta 3×6 limpias, luego progresamos.",
+          "exercises": [
+            {
+              "name": "Chin-ups (supinas)",
+              "sets": "3",
+              "reps": "las que salgan",
+              "intensity": "RIR 1"
+            }
+          ]
+        },
+        {
+          "name": "Hipertrofia horizontal: Australianas en anillas",
+          "type": "hipertrofia",
+          "restBetweenSets": "90s",
+          "progression": "Subir reps → pies adelante → pies elevados en silla.",
+          "exercises": [
+            {
+              "name": "Australianas en anillas",
+              "sets": "4",
+              "reps": "8-12",
+              "intensity": "tempo 2-1-2"
+            }
+          ]
+        },
+        {
+          "name": "Deltoides posterior: Face-pull en anillas",
+          "type": "accesorios",
+          "restBetweenSets": "60-90s",
+          "exercises": [
+            { "name": "Face-pull en anillas", "sets": "2-3", "reps": "12-15" }
+          ]
+        },
+        {
+          "name": "Accesorios + core",
+          "type": "core",
+          "restBetweenSets": "60-90s",
+          "exercises": [
+            {
+              "name": "Australianas supinas en anillas (bíceps)",
+              "sets": "2",
+              "reps": "10-15"
+            },
+            {
+              "name": "Hanging knee raises",
+              "sets": "3",
+              "reps": "8-12",
+              "note": "Sin balanceo. Semilla del L-sit."
+            },
+            { "name": "Dead hang al máximo", "sets": "2", "reps": "máx" }
+          ]
+        }
+      ]
+    },
     { "id": "push-b", "name": "Push B", "group": "push", "focus": "volumen" },
     { "id": "pull-a", "name": "Pull A", "group": "pull", "focus": "fuerza" },
     { "id": "pull-b", "name": "Pull B", "group": "pull", "focus": "volumen" },
