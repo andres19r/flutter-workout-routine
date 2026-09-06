@@ -9,6 +9,27 @@
       "name": "Push A",
       "group": "push",
       "focus": "fuerza",
+      "warmup": {
+        "duration": "8-10 min",
+        "exercises": [
+          {
+            "name": "Movilidad de hombros, muñecas y codos",
+            "sets": "1",
+            "reps": "20"
+          },
+          {
+            "name": "Scapular push-ups en plancha",
+            "sets": "2",
+            "reps": "8"
+          },
+          {
+            "name": "Flexiones inclinadas suaves",
+            "sets": "1-2",
+            "reps": "10"
+          }
+        ],
+        "restBeforeRoutine": "1 min"
+      },
       "blocks": [
         {
           "name": "Potencia: Flexiones con palmada (opcional)",
@@ -103,6 +124,27 @@
       "name": "Push B",
       "group": "push",
       "focus": "volumen",
+      "warmup": {
+        "duration": "8-10 min",
+        "exercises": [
+          {
+            "name": "Movilidad de hombros, muñecas y codos",
+            "sets": "1",
+            "reps": "20"
+          },
+          {
+            "name": "Scapular push-ups en plancha",
+            "sets": "2",
+            "reps": "8"
+          },
+          {
+            "name": "Flexiones inclinadas suaves",
+            "sets": "1-2",
+            "reps": "10"
+          }
+        ],
+        "restBeforeRoutine": "1 min"
+      },
       "blocks": [
         {
           "name": "Pseudo-planche push-ups",
@@ -158,6 +200,32 @@
       "name": "Pull A",
       "group": "pull",
       "focus": "fuerza",
+      "warmup": {
+        "duration": "8-10 min",
+        "exercises": [
+          {
+            "name": "Movilidad de hombros/escápula (círculos, dislocates con toalla)",
+            "sets": "1",
+            "reps": "20"
+          },
+          {
+            "name": "Scapular pulls colgado en la barra",
+            "sets": "2",
+            "reps": "8"
+          },
+          {
+            "name": "Dead hang",
+            "sets": "2",
+            "reps": "20-30s"
+          },
+          {
+            "name": "1 serie ligera de australianas en anillas",
+            "sets": "1",
+            "reps": "10"
+          }
+        ],
+        "restBeforeRoutine": "1 min"
+      },
       "blocks": [
         {
           "name": "Fuerza vertical: Dominadas pronas",
@@ -245,6 +313,32 @@
       "name": "Pull B",
       "group": "pull",
       "focus": "volumen",
+      "warmup": {
+        "duration": "8-10 min",
+        "exercises": [
+          {
+            "name": "Movilidad de hombros/escápula (círculos, dislocates con toalla)",
+            "sets": "1",
+            "reps": "20"
+          },
+          {
+            "name": "Scapular pulls colgado en la barra",
+            "sets": "2",
+            "reps": "8"
+          },
+          {
+            "name": "Dead hang",
+            "sets": "2",
+            "reps": "20-30s"
+          },
+          {
+            "name": "1 serie ligera de australianas en anillas",
+            "sets": "1",
+            "reps": "10"
+          }
+        ],
+        "restBeforeRoutine": "1 min"
+      },
       "blocks": [
         {
           "name": "Dominadas pronas (submáximo)",
@@ -309,6 +403,37 @@
       "name": "Legs A",
       "group": "legs",
       "focus": "cuádriceps / fuerza",
+      "warmup": {
+        "duration": "8-10 min",
+        "exercises": [
+          {
+            "name": "Saltos de puntas",
+            "sets": "1",
+            "reps": "1min"
+          },
+          {
+            "name": "Movilidad de cadera, rodilla y tobillo",
+            "sets": "1",
+            "reps": "20"
+          },
+          {
+            "name": "Air squats suaves",
+            "sets": "1",
+            "reps": "15-20"
+          },
+          {
+            "name": "Zancadas caminando",
+            "sets": "1",
+            "reps": "10"
+          },
+          {
+            "name": "Puente de glúteo",
+            "sets": "1",
+            "reps": "15"
+          }
+        ],
+        "restBeforeRoutine": "1 min"
+      },
       "blocks": [
         {
           "name": "Potencia: Sentadillas con salto (opcional)",
@@ -395,6 +520,37 @@
       "name": "Legs B",
       "group": "legs",
       "focus": "cadena posterior / volumen",
+      "warmup": {
+        "duration": "8-10 min",
+        "exercises": [
+          {
+            "name": "Saltos de puntas",
+            "sets": "1",
+            "reps": "1min"
+          },
+          {
+            "name": "Movilidad de cadera, rodilla y tobillo",
+            "sets": "1",
+            "reps": "20"
+          },
+          {
+            "name": "Air squats suaves",
+            "sets": "1",
+            "reps": "15-20"
+          },
+          {
+            "name": "Zancadas caminando",
+            "sets": "1",
+            "reps": "10"
+          },
+          {
+            "name": "Puente de glúteo",
+            "sets": "1",
+            "reps": "15"
+          }
+        ],
+        "restBeforeRoutine": "1 min"
+      },
       "blocks": [
         {
           "name": "Pistol asistida con anillas",

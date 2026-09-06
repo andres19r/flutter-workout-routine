@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Day {
 
- String get id; String get name; String get group; String get focus; List<Block> get blocks;
+ String get id; String get name; String get group; String get focus; Warmup get warmup; List<Block> get blocks;
 /// Create a copy of Day
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -29,16 +29,16 @@ $DayCopyWith<Day> get copyWith => _$DayCopyWithImpl<Day>(this as Day, _$identity
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Day&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.group, group) || other.group == group)&&(identical(other.focus, focus) || other.focus == focus)&&const DeepCollectionEquality().equals(other.blocks, blocks));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Day&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.group, group) || other.group == group)&&(identical(other.focus, focus) || other.focus == focus)&&(identical(other.warmup, warmup) || other.warmup == warmup)&&const DeepCollectionEquality().equals(other.blocks, blocks));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,group,focus,const DeepCollectionEquality().hash(blocks));
+int get hashCode => Object.hash(runtimeType,id,name,group,focus,warmup,const DeepCollectionEquality().hash(blocks));
 
 @override
 String toString() {
-  return 'Day(id: $id, name: $name, group: $group, focus: $focus, blocks: $blocks)';
+  return 'Day(id: $id, name: $name, group: $group, focus: $focus, warmup: $warmup, blocks: $blocks)';
 }
 
 
@@ -49,11 +49,11 @@ abstract mixin class $DayCopyWith<$Res>  {
   factory $DayCopyWith(Day value, $Res Function(Day) _then) = _$DayCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String group, String focus, List<Block> blocks
+ String id, String name, String group, String focus, Warmup warmup, List<Block> blocks
 });
 
 
-
+$WarmupCopyWith<$Res> get warmup;
 
 }
 /// @nodoc
@@ -66,17 +66,27 @@ class _$DayCopyWithImpl<$Res>
 
 /// Create a copy of Day
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? group = null,Object? focus = null,Object? blocks = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? group = null,Object? focus = null,Object? warmup = null,Object? blocks = null,}) {
   return _then(Day(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,group: null == group ? _self.group : group // ignore: cast_nullable_to_non_nullable
 as String,focus: null == focus ? _self.focus : focus // ignore: cast_nullable_to_non_nullable
-as String,blocks: null == blocks ? _self.blocks : blocks // ignore: cast_nullable_to_non_nullable
+as String,warmup: null == warmup ? _self.warmup : warmup // ignore: cast_nullable_to_non_nullable
+as Warmup,blocks: null == blocks ? _self.blocks : blocks // ignore: cast_nullable_to_non_nullable
 as List<Block>,
   ));
 }
-
+/// Create a copy of Day
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WarmupCopyWith<$Res> get warmup {
+  
+  return $WarmupCopyWith<$Res>(_self.warmup, (value) {
+    return _then(_self.copyWith(warmup: value));
+  });
+}
 }
 
 
@@ -158,10 +168,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String group,  String focus,  List<Block> blocks)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String group,  String focus,  Warmup warmup,  List<Block> blocks)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Day() when $default != null:
-return $default(_that.id,_that.name,_that.group,_that.focus,_that.blocks);case _:
+return $default(_that.id,_that.name,_that.group,_that.focus,_that.warmup,_that.blocks);case _:
   return orElse();
 
 }
@@ -179,10 +189,10 @@ return $default(_that.id,_that.name,_that.group,_that.focus,_that.blocks);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String group,  String focus,  List<Block> blocks)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String group,  String focus,  Warmup warmup,  List<Block> blocks)  $default,) {final _that = this;
 switch (_that) {
 case _Day():
-return $default(_that.id,_that.name,_that.group,_that.focus,_that.blocks);case _:
+return $default(_that.id,_that.name,_that.group,_that.focus,_that.warmup,_that.blocks);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -199,10 +209,10 @@ return $default(_that.id,_that.name,_that.group,_that.focus,_that.blocks);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String group,  String focus,  List<Block> blocks)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String group,  String focus,  Warmup warmup,  List<Block> blocks)?  $default,) {final _that = this;
 switch (_that) {
 case _Day() when $default != null:
-return $default(_that.id,_that.name,_that.group,_that.focus,_that.blocks);case _:
+return $default(_that.id,_that.name,_that.group,_that.focus,_that.warmup,_that.blocks);case _:
   return null;
 
 }
@@ -214,13 +224,14 @@ return $default(_that.id,_that.name,_that.group,_that.focus,_that.blocks);case _
 @JsonSerializable()
 
 class _Day implements Day {
-  const _Day({required this.id, required this.name, required this.group, required this.focus,  List<Block> blocks = const []}): _blocks = blocks;
+  const _Day({required this.id, required this.name, required this.group, required this.focus, required this.warmup,  List<Block> blocks = const []}): _blocks = blocks;
   factory _Day.fromJson(Map<String, dynamic> json) => _$DayFromJson(json);
 
 @override final  String id;
 @override final  String name;
 @override final  String group;
 @override final  String focus;
+@override final  Warmup warmup;
  final  List<Block> _blocks;
 @override@JsonKey() List<Block> get blocks {
   if (_blocks is EqualUnmodifiableListView) return _blocks;
@@ -242,16 +253,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Day&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.group, group) || other.group == group)&&(identical(other.focus, focus) || other.focus == focus)&&const DeepCollectionEquality().equals(other._blocks, _blocks));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Day&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.group, group) || other.group == group)&&(identical(other.focus, focus) || other.focus == focus)&&(identical(other.warmup, warmup) || other.warmup == warmup)&&const DeepCollectionEquality().equals(other._blocks, _blocks));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,group,focus,const DeepCollectionEquality().hash(_blocks));
+int get hashCode => Object.hash(runtimeType,id,name,group,focus,warmup,const DeepCollectionEquality().hash(_blocks));
 
 @override
 String toString() {
-  return 'Day(id: $id, name: $name, group: $group, focus: $focus, blocks: $blocks)';
+  return 'Day(id: $id, name: $name, group: $group, focus: $focus, warmup: $warmup, blocks: $blocks)';
 }
 
 
@@ -262,11 +273,11 @@ abstract mixin class _$DayCopyWith<$Res> implements $DayCopyWith<$Res> {
   factory _$DayCopyWith(_Day value, $Res Function(_Day) _then) = __$DayCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String group, String focus, List<Block> blocks
+ String id, String name, String group, String focus, Warmup warmup, List<Block> blocks
 });
 
 
-
+@override $WarmupCopyWith<$Res> get warmup;
 
 }
 /// @nodoc
@@ -279,18 +290,28 @@ class __$DayCopyWithImpl<$Res>
 
 /// Create a copy of Day
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? group = null,Object? focus = null,Object? blocks = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? group = null,Object? focus = null,Object? warmup = null,Object? blocks = null,}) {
   return _then(_Day(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,group: null == group ? _self.group : group // ignore: cast_nullable_to_non_nullable
 as String,focus: null == focus ? _self.focus : focus // ignore: cast_nullable_to_non_nullable
-as String,blocks: null == blocks ? _self._blocks : blocks // ignore: cast_nullable_to_non_nullable
+as String,warmup: null == warmup ? _self.warmup : warmup // ignore: cast_nullable_to_non_nullable
+as Warmup,blocks: null == blocks ? _self._blocks : blocks // ignore: cast_nullable_to_non_nullable
 as List<Block>,
   ));
 }
 
-
+/// Create a copy of Day
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$WarmupCopyWith<$Res> get warmup {
+  
+  return $WarmupCopyWith<$Res>(_self.warmup, (value) {
+    return _then(_self.copyWith(warmup: value));
+  });
+}
 }
 
 // dart format on

@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:mi_rutina/models/block.dart';
+import 'package:mi_rutina/models/warmup.dart';
 
 part 'day.freezed.dart';
 part 'day.g.dart';
@@ -11,6 +12,7 @@ abstract class Day with _$Day {
     required String name,
     required String group,
     required String focus,
+    required Warmup warmup,
     @Default([]) List<Block> blocks,
   }) = _Day;
 

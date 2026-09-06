@@ -15,7 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mi Rutina',
-      theme: ThemeData(colorSchemeSeed: Colors.indigo, useMaterial3: true),
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        colorSchemeSeed: Colors.indigo,
+        useMaterial3: true,
+      ),
       home: HomeScreen(),
     );
   }
@@ -48,7 +52,6 @@ class HomeScreen extends StatelessWidget {
 
           return Column(
             children: [
-              Text(routine.meta.goals),
               Expanded(
                 child: ListView.builder(
                   itemCount: routine.days.length,
