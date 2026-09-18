@@ -1,11 +1,9 @@
-import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart';
 import 'package:mi_rutina/day_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mi_rutina/providers/routine_providers.dart';
 
-import 'models/routine.dart';
-
-void main() => runApp(const MyApp());
+void main() => runApp(const ProviderScope(child: MyApp()));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -25,31 +23,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
-  Future<Routine> _loadRoutine() async {
-    final raw = await rootBundle.loadString('assets/data/routine.json');
-    final json = jsonDecode(raw) as Map<String, dynamic>;
-    return Routine.fromJson(json);
-  }
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final routineAsync = ref.watch(routineProvider);
+
     return Scaffold(
       appBar: AppBar(title: const Text('Mi rutina')),
-      body: FutureBuilder<Routine>(
-        future: _loadRoutine(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          }
-
-          final routine = snapshot.data!;
-
+      body: routineAsync.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (e, _) => Center(child: Text('Error: $e')),
+        data: (routine) {
           return Column(
             children: [
               Expanded(
