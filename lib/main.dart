@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mi_rutina/day_screen.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mi_rutina/providers/routine_providers.dart';
+import 'package:mi_rutina/router.dart';
 
 void main() => runApp(const ProviderScope(child: MyApp()));
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Mi Rutina',
       theme: ThemeData(
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: Colors.indigo,
         useMaterial3: true,
       ),
-      home: HomeScreen(),
+      routerConfig: router,
     );
   }
 }
@@ -47,12 +48,7 @@ class HomeScreen extends ConsumerWidget {
                       title: Text(day.name),
                       subtitle: Text(day.focus),
                       trailing: Text(day.group),
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: ((context) => DayScreen(day: day)),
-                        ),
-                      ),
+                      onTap: () => context.go('/day/${day.id}'),
                     );
                   },
                 ),
