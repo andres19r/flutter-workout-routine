@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mi_rutina/providers/routine_providers.dart';
 import 'package:mi_rutina/widgets/day_block_list.dart';
+import 'package:mi_rutina/widgets/rest_timer.dart';
 
 class DayScreen extends ConsumerWidget {
   final String id;
@@ -27,6 +28,7 @@ class DayScreen extends ConsumerWidget {
           body: day.blocks.isEmpty
               ? const Center(child: Text('Sin detalle todavía'))
               : DayBlockList(day: day),
+          bottomNavigationBar: const RestTimer(),
         );
       },
     );
